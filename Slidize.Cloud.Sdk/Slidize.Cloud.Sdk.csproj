@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>Slidize.Cloud.Sdk</AssemblyName>
+    <PackageId>Slidize.Cloud.Sdk</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>Slidize Team</Authors>
+    <Company>Smallize Pty Ltd</Company>
+    <AssemblyTitle>Slidize.Cloud SDK</AssemblyTitle>
+    <Description>Manage PowerPoint presentations.</Description>
+    <Copyright>Copyright (c) 2024 Smallize Pty Ltd. All Rights Reserved</Copyright>
+    <RootNamespace>Slidize.Cloud.Sdk</RootNamespace>
+    <Version>24.6.0</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Slidize.Cloud.Sdk.xml</DocumentationFile>
+    <RepositoryUrl>https://github.com/slidize/slidize-cloud-dotnet.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Nullable>annotations</Nullable>
+    <Title>Slidize for Cloud</Title>
+    <PackageLicenseUrl>MIT</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="108.0.3" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+</Project>
